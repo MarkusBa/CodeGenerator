@@ -1,2 +1,8 @@
 module codegenerator.Codegenerator where
 
+-- Let's try echo
+
+main  x = do
+               println x
+            
+
