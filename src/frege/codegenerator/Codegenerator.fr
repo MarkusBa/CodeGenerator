@@ -1,8 +1,15 @@
 module codegenerator.Codegenerator where
-
+    
 -- Let's try echo
-
-main  x = do
-               println x
+-- lein fregec :run codegenerator.Codegenerator in
+main args = do
+               case args of 
+                     [file] -> do
+                       x <- readFile file
+                       openwriter <- openWriter "out.test"
+                       PrintWriter.println openwriter x
+                       Flushable.flush openwriter
+                     _ -> putStrLn "Wrong number of arguments"
+               
             
 
